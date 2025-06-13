@@ -1,0 +1,6 @@
+# requirements.txt
+gradio
+python-dotenv
+pandas
+Pillow
+azure-cognitiveservices-vision-customvision
