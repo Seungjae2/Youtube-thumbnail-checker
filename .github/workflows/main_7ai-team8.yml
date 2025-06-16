@@ -22,15 +22,15 @@ jobs:
     - name: Log in to registry
       uses: docker/login-action@v2
       with:
-        registry: 7ai-team8-c3ewa6fgach9bkd6.koreacentral-01.azurewebsites.net
-        username: ${{ secrets.AzureAppService_ContainerUsername_75143f3aac34428a9eac82e6fb808d2c }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_0924d2f76ec3427e8c2dad8cee2a557b }}
+        registry: https://7ai-team8-c3ewa6fgach9bkd6.koreacentral-01.azurewebsites.net/
+        username: ${{ secrets.AzureAppService_ContainerUsername_76c0396c42fa40be95ec7fe22d7f6ed2 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_ed8fdfac00274e65a553590e31541d16 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags:  7ai8team-azdsaadea3fccke6.koreacentral-01.azurewebsites.net/${{ secrets.AzureAppService_ContainerUsername_75143f3aac34428a9eac82e6fb808d2c }}/appsvc/staticsite:${{ github.sha }}
+        tags: 7ai-team8-c3ewa6fgach9bkd6.koreacentral-01.azurewebsites.net/${{ secrets.AzureAppService_ContainerUsername_76c0396c42fa40be95ec7fe22d7f6ed2 }}/youtube-thumbnail-checker:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: '7ai-team8'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_5183e9a3f9714960a35831a29b16107f }}
-        images: ' 7ai8team-azdsaadea3fccke6.koreacentral-01.azurewebsites.net/${{ secrets.AzureAppService_ContainerUsername_75143f3aac34428a9eac82e6fb808d2c }}/appsvc/staticsite:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_2a5daa2ee9724269b83cf1ee2a6e561f }}
+        images: '7ai-team8-c3ewa6fgach9bkd6.koreacentral-01.azurewebsites.net/${{ secrets.AzureAppService_ContainerUsername_76c0396c42fa40be95ec7fe22d7f6ed2 }}/youtube-thumbnail-checker:${{ github.sha }}'
