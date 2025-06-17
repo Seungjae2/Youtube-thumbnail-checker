@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: 7aiteam8-eme2cphzbmhjccfm.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d466525dd64c4564ac8e7a672e681158 }}/youtube-thumbnail-checker:${{ github.sha }}
+        tags: 7aiteam8-eme2cphzbmhjccfm.azurecr.io/seungjae2/youtube-thumbnail-checker:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: '7ai-team8'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_b6f6c250cd5744e69151c2eb8cb91000 }}
-        images: '7aiteam8-eme2cphzbmhjccfm.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d466525dd64c4564ac8e7a672e681158 }}/youtube-thumbnail-checker:${{ github.sha }}'
+        images: '7aiteam8-eme2cphzbmhjccfm.azurecr.io/seungjae2/youtube-thumbnail-checker:${{ github.sha }}'
