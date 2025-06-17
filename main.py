@@ -17,7 +17,8 @@ def main():
     demo = create_ui()
 
     # Gradio 앱 실행
-    demo.launch()
+    # server_name="0.0.0.0" 옵션을 추가하여 Docker 컨테이너 외부에서의 접속을 허용합니다.
+    demo.launch(server_name="0.0.0.0")
 
 if __name__ == "__main__":
     main()

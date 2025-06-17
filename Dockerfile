@@ -18,4 +18,4 @@ EXPOSE 7860
 
 # 6. 이 컴퓨터가 켜지면 자동으로 실행할 명령어를 알려줍니다.
 # (로컬에서 실행하던 python main.py 명령어와 같습니다.)
-CMD ["python", "main.py"]
+CMD ["python", "-u", "main.py"]
