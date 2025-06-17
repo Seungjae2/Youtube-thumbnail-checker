@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://7aiteam8-eme2cphzbmhjccfm.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_d42e70982bb5463c95eef36d4775112e }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_3203c769a51e493490f5710934312294 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_d466525dd64c4564ac8e7a672e681158 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_19c16cc1a82c4e8d98b5405981a3ab5f }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: 7aiteam8-eme2cphzbmhjccfm.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d42e70982bb5463c95eef36d4775112e }}/youtube-thumbnail-checker:${{ github.sha }}
+        tags: 7aiteam8-eme2cphzbmhjccfm.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d466525dd64c4564ac8e7a672e681158 }}/youtube-thumbnail-checker:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: '7ai-team8'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_2a50c11ec6dd44a9b3e3d9b0fae7f48a }}
-        images: '7aiteam8-eme2cphzbmhjccfm.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d42e70982bb5463c95eef36d4775112e }}/youtube-thumbnail-checker:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_b6f6c250cd5744e69151c2eb8cb91000 }}
+        images: '7aiteam8-eme2cphzbmhjccfm.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d466525dd64c4564ac8e7a672e681158 }}/youtube-thumbnail-checker:${{ github.sha }}'
